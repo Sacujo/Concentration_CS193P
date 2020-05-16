@@ -25,7 +25,7 @@ class ConcentrationViewController: UIViewController
     private func updateFlipCountLabel() {
         let attributes: [NSAttributedString.Key : Any] = [
             .strokeWidth: 5.0,
-            .strokeColor: #colorLiteral(red: 1, green: 0.5638643503, blue: 0, alpha: 1)
+            .strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         ]
         let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
         flipCountLabel.attributedText = attributedString
@@ -56,15 +56,21 @@ class ConcentrationViewController: UIViewController
             let card = game.cards[index]
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: UIControl.State.normal)
-                button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                button.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             } else {
                 button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5638643503, blue: 0, alpha: 0) : #colorLiteral(red: 1, green: 0.5638643503, blue: 0, alpha: 1)
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5638643503, blue: 0, alpha: 0) : #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
             }
         }
     }
     
-//    private var emojiChoices = ["🎃", "👻", "🦇", "🧛🏻‍♀️", "😱", "🍭", "🍎", "👺", "😈"]
+    var theme: String? {
+        didSet {
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
     
     private var emojiChoices = "🎃👻🦇🧛🏻‍♀️😱🍭🍎👺😈"
     
