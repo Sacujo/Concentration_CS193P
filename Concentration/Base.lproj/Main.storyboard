@@ -23,16 +23,25 @@
                                         <rect key="frame" x="12" y="0.0" width="113" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Sports"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="S6p-Bt-Yxf" eventType="touchUpInside" id="ZfQ-aw-Skr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFm-FF-5Ay">
                                         <rect key="frame" x="18" y="68" width="101" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Faces"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="S6p-Bt-Yxf" eventType="touchUpInside" id="py2-t2-Vhh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OW-KQ-uoD">
                                         <rect key="frame" x="0.0" y="136" width="137" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Animals"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="S6p-Bt-Yxf" eventType="touchUpInside" id="LqB-vu-UP0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -47,10 +56,13 @@
                         <viewLayoutGuide key="safeArea" id="2T1-KG-OA7"/>
                     </view>
                     <navigationItem key="navigationItem" id="CSW-XD-iiz"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="dTz-zZ-net"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQq-Xr-xKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181.15942028985509" y="115.84821428571428"/>
+            <point key="canvasLocation" x="122" y="116"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -311,4 +323,7 @@
             <point key="canvasLocation" x="-1523" y="733"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dTz-zZ-net"/>
+    </inferredMetricsTieBreakers>
 </document>
